@@ -2,7 +2,10 @@ from common import wrapper
 
 
 @wrapper
-def solve_p1(data):
+def solve_p1(data, *_):
+    """
+    Solve d1p1
+    """
     data = [
         [x if x not in "abcdefghijklmnopqrtstuvwxyz\n" else None for x in y]
         for y in data
@@ -19,7 +22,10 @@ def solve_p1(data):
 
 
 @wrapper
-def solve_p2(data):
+def solve_p2(data, *_):
+    """
+    Solve d1p2
+    """
     digits = {
         "one": "on1ne",
         "two": "tw2wo",
@@ -32,8 +38,8 @@ def solve_p2(data):
         "nine": "nin9ine",
     }
     for index, datapoint in enumerate(data):
-        for digit in digits.keys():
-            datapoint = datapoint.replace(digit, digits[digit])
+        for digit, replacement in digits.items():
+            datapoint = datapoint.replace(digit, replacement)
             data[index] = datapoint
 
     return solve_p1(data)
