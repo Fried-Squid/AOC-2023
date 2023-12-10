@@ -13,4 +13,4 @@ def wrapper(f):
     return inner
 
 def transpose(matrix):
-    return [[row[i] for row in matrix] for i in range(len(matrix[0]))]
+    return list([[row[i] for row in matrix] for i in range(len(matrix[0]))])
